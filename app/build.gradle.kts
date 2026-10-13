@@ -2,7 +2,7 @@
 plugins {
     alias(libs.plugins.android.application) // Android-застосунок
     alias(libs.plugins.kotlin.android)      // підтримка Kotlin
-    alias(libs.plugins.kotlin.compose)      // компілятор Jetpack Compose (Kotlin 2.x)
+    alias(libs.plugins.kotlin.compose)      // компілятор Jetpack Compose 
 }
 
 android {
@@ -20,11 +20,11 @@ android {
     }
 
     buildTypes {
-        // debug-збірка використовується під час розробки
+        // debug-збірка 
         debug {
             isMinifyEnabled = false
         }
-        // release-збірка: можна увімкнути R8 для оптимізації
+        // release-збірка
         release {
             isMinifyEnabled = false
             proguardFiles(
@@ -46,19 +46,19 @@ android {
 }
 
 dependencies {
-    // Базові бібліотеки AndroidX
+    //  бібліотеки AndroidX
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
 
-    // Jetpack Compose (версії узгоджує BOM)
+    // Jetpack Compose 
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.ui)
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
 
-    // Стороння бібліотека іконок Material (використовується для візуалізації показників)
+    // Стороння бібліотека іконок Material 
     implementation(libs.androidx.material.icons.extended)
 
     // Тести
@@ -68,7 +68,7 @@ dependencies {
     androidTestImplementation(platform(libs.androidx.compose.bom))
     androidTestImplementation(libs.androidx.ui.test.junit4)
 
-    // Інструменти лише для debug-збірки (Preview, Layout Inspector)
+    // Інструменти лише для debug-збірки
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 }
